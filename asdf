@@ -1,0 +1,294 @@
+--- Inicio del log ---
+
+--- Orm ---
+select count(1) as `count`  FROM `ejemplares` WHERE 
+--- Inicio del log ---
+
+--- Orm ---
+select count(1) as `count`  FROM `ejemplares` WHERE 
+--- Inicio del log ---
+
+--- Orm ---
+select count(1) as `count`  FROM `ejemplares` 
+--- Inicio del log ---
+
+--- Orm ---
+select count(1) as `count`  FROM `ejemplares`  WHERE 
+--- Inicio del log ---
+
+--- Orm ---
+select count(1) as `count`  FROM `ejemplares` 
+--- Inicio del log ---
+
+--- Orm ---
+select count(1) as `count`  FROM `ejemplares` 
+--- Inicio del log ---
+
+--- Orm ---
+select count(1) as `count`  FROM `ejemplares` 
+--- Inicio del log ---
+
+--- Orm ---
+select count(1) as `count`  FROM `ejemplares`  WHERE referencia like '%' 
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares` 
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares` SELECT ejemplares.* FROM ejemplares  WHERE (NOT referencia LIKE ? OR referencia > ?) OR (NOT referencia LIKE ? OR referencia > ?)  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares` SELECT ejemplares.* FROM ejemplares  WHERE (NOT referencia LIKE ? OR referencia > ?) OR (NOT referencia LIKE ? OR referencia > ?)  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE SELECT ejemplares.* FROM ejemplares  WHERE (NOT referencia LIKE 'Array' OR referencia > '') OR (NOT referencia LIKE '' OR referencia > '')  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE SELECT ejemplares.* FROM ejemplares  WHERE (NOT referencia LIKE 'Array' OR referencia > '') OR (NOT referencia LIKE '' OR referencia > '')  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE SELECT ejemplares.* FROM ejemplares  WHERE (NOT referencia LIKE 'Array' OR referencia > '') OR (NOT referencia LIKE '' OR referencia > '')  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE SELECT ejemplares.* FROM ejemplares  WHERE (NOT referencia LIKE 'Array' OR referencia > '') OR (NOT referencia LIKE '' OR referencia > '')  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE SELECT ejemplares.* FROM ejemplares  WHERE (NOT referencia LIKE 'Array' OR referencia > '') OR (NOT referencia LIKE '' OR referencia > '')  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE SELECT ejemplares.* FROM ejemplares  WHERE (NOT referencia LIKE 'Array' OR referencia > '') OR (NOT referencia LIKE '' OR referencia > '')  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE SELECT ejemplares.* FROM ejemplares  WHERE (NOT referencia LIKE 'Array' OR referencia > '') OR (NOT referencia LIKE '' OR referencia > '')  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE SELECT ejemplares.* FROM ejemplares  WHERE (NOT referencia LIKE 'Array' OR referencia > '') OR (NOT referencia LIKE '' OR referencia > '')  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE SELECT ejemplares.* FROM ejemplares  WHERE (NOT referencia LIKE 'Array' OR referencia > '') OR (NOT referencia LIKE '' OR referencia > '')  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE SELECT ejemplares.* FROM ejemplares  WHERE (NOT referencia LIKE '1' OR referencia > '2') OR (NOT referencia LIKE '3' OR referencia > '4')  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE SELECT ejemplares.* FROM ejemplares  WHERE (NOT referencia LIKE '1' OR referencia > '2') OR (NOT referencia LIKE '3' OR referencia > '4')  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE SELECT ejemplares.* FROM ejemplares  WHERE (NOT referencia LIKE '1' OR referencia > '2') OR (NOT referencia LIKE '3' OR referencia > '4')  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE SELECT ejemplares.* FROM ejemplares  WHERE (NOT referencia LIKE '1' OR referencia > '2') OR (NOT referencia LIKE '3' OR referencia > '4')  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE SELECT ejemplares.* FROM ejemplares  WHERE (NOT referencia LIKE '1' OR referencia > '2') OR (NOT referencia LIKE '3' OR referencia > '4')  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE SELECT ejemplares.* FROM ejemplares  WHERE (NOT referencia LIKE 'Array' OR referencia > '') OR (NOT referencia LIKE '' OR referencia > '')  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE SELECT ejemplares.* FROM ejemplares  WHERE (NOT referencia LIKE 'Array' OR referencia > '') OR (NOT referencia LIKE '' OR referencia > '')  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE SELECT ejemplares.* FROM ejemplares  WHERE (NOT referencia LIKE 'Array' OR referencia > '') OR (NOT referencia LIKE '' OR referencia > '')  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE SELECT ejemplares.* FROM ejemplares  WHERE (NOT referencia LIKE 'refernecia' OR referencia > 'refernecia') OR (NOT referencia LIKE 'refernecia' OR referencia > 'refernecia')  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE SELECT ejemplares.* FROM ejemplares  WHERE (NOT referencia LIKE 'refernecia' OR referencia > 'refernecia') OR (NOT referencia LIKE 'refernecia' OR referencia > 'refernecia')  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (NOT referencia LIKE 'refernecia' OR referencia > 'refernecia') OR (NOT referencia LIKE 'refernecia' OR referencia > 'refernecia')  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (NOT referencia LIKE 'refernecia' OR referencia > 'refernecia') OR (NOT referencia LIKE 'refernecia' OR referencia > 'refernecia')  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (NOT referencia LIKE 'refernecia' OR referencia > 'refernecia') OR (NOT referencia LIKE 'refernecia' OR referencia > 'refernecia')  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (NOT referencia LIKE 'refernecia' OR referencia > 'refernecia') OR (NOT referencia LIKE 'refernecia' OR referencia > 'refernecia')  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (NOT referencia LIKE '%')  LIMIT 150,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (referencia LIKE '%')  LIMIT 0,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (referencia LIKE '0001')  LIMIT 0,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (referencia LIKE '%0001')  LIMIT 0,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (referencia LIKE '%0001')  LIMIT 0,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (precio < '10')  LIMIT 0,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (precio < '100')  LIMIT 0,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (precio < '55')  LIMIT 0,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (precio < '22')  LIMIT 0,50
+--- Inicio del log ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (precio < '22')  LIMIT 0,50

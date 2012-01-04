@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN" "http://castor.org/mapping.dtd">
+<mapping>
+	<description>Description of the mapping</description>
+
+	<!-- <include href="other_mapping_file.xml" />! -->
+	<class name="Item">
+		<map-to xml="EstoEsUnItem" />
+		<field name="id" type="integer">
+			<bind-xml name="identificador" node="element" />
+		</field>
+		<field name="name" type="string">
+			<bind-xml name="nombre" node="attribute" />
+		</field>
+	</class>
+	<!-- mapping for class 'A' -->
+	<class name="Objeto">
+		<map-to xml="XmlObjeto" />
+
+		<field name="id" type="integer">
+			<bind-xml name="identificador" node="attribute" />
+		</field>
+
+		<field name="name" type="string">
+			<bind-xml name="nombre" node="element" />
+		</field>
+		<field name="surname" type="string">
+			<bind-xml name="apellido" node="element" />
+		</field>
+		<field name="lista" collection="arraylist" type="Item" container="false">
+			<bind-xml name="lista" />
+		</field>
+		
+		<field name="item1" type="Item">
+			<bind-xml name="item1" node="element"/>
+		</field>
+		<field name="item2" type="Item">
+			<bind-xml name="item2" node="element"/>
+		</field>
+	</class>
+
+
+</mapping>

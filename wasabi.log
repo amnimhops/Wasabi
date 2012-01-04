@@ -1,0 +1,2084 @@
+--- Inicio del log ---
+
+--- Comenzando TestSetupRequest ---
+
+--- Service ---
+Limpiando la base de datos
+--- Orm ---
+DELETE FROM autoresejemplares
+--- Orm ---
+DELETE FROM materiasejemplares
+--- Orm ---
+DELETE FROM autores
+--- Orm ---
+DELETE FROM materias
+--- Orm ---
+DELETE FROM ejemplares
+--- Orm ---
+ALTER TABLE autores AUTO_INCREMENT=1
+--- Orm ---
+ALTER TABLE materias AUTO_INCREMENT=1
+--- Orm ---
+ALTER TABLE ejemplares AUTO_INCREMENT=1
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Cervantes Saavedra, Miguel')
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Perez Reverte, Arturo')
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Eco, Umberto')
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Kinnang Rawling, Marjorie')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Fantasía Épica')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Novela')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Ciencia Ficción')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Geografía')
+--- Orm ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('RF-0001','Primer titulo','Primera','canaya','11.1','2011-10-24 16:10:35','2011-10-24 16:10:35','2011-10-24 16:10:35','Descripcion 1','Observacion1')
+--- Orm ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('RF-0002','Segundo titulo','Segunda','Alfaguarra','23.4','2011-10-24 16:10:35','2011-10-24 16:10:35','2011-10-24 16:10:35','Descripcion 2','Observacion2')
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (1,1,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (1,2,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (2,3,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (2,4,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (1,1,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (1,2,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (2,3,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (2,4,null)
+--- Finalizando TestSetupRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando NuevaMateriaRequest ---
+
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('nueva materia')
+--- NuevaMateriaRequest ---
+Materia 5 añadida con exito
+--- Finalizando NuevaMateriaRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT * FROM MATERIAS WHERE id = 1
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarMateriaRequest ---
+
+--- Orm ---
+UPDATE `materias` SET `id`=1,`nombre`='materia modificada' WHERE `id`=1
+--- Finalizando ModificarMateriaRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT * FROM MATERIAS WHERE Nombre like '%%%' ORDER BY Nombre ASC
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT * FROM MATERIAS WHERE id = 1
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando NuevoAutorRequest ---
+
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('nuevo autor')
+--- NuevoAutorRequest ---
+Autor 5 añadido con exito
+--- Finalizando NuevoAutorRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE id = 1
+--- BuscarAutoresRequest ---
+1 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarAutorRequest ---
+
+--- Orm ---
+UPDATE `autores` SET `id`=1,`nombre`='autor modificado' WHERE `id`=1
+--- Finalizando ModificarAutorRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE Nombre like '%%%' ORDER BY Nombre ASC
+--- BuscarAutoresRequest ---
+5 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE id = 1
+--- BuscarAutoresRequest ---
+1 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando AltaEjemplarRequest ---
+
+--- Orm ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('rf1','nuevo ejemplar',null,null,'0.0',null,null,null,null,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (3,1,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (3,1,null)
+--- Finalizando AltaEjemplarRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarEjemplarRequest ---
+
+--- Orm ---
+UPDATE `ejemplares` SET `id`=1,`referencia`='RF-0001',`titulo`='Modificado',`edicion`='Primera',`editorial`='canaya',`precio`='11.1',`fechaPublicacion`='2011-10-24T16:10:35.000+02:00',`fechaAlta`='2011-10-24T16:10:35.000+02:00',`fechaModificacion`='2011-10-24T16:10:35.000+02:00',`descripcion`='Descripcion 1',`observaciones`='Observacion1' WHERE `id`=1
+--- Orm ---
+DELETE FROM autoresejemplares WHERE idEjemplar=1
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (1,3,1)
+--- Orm ---
+DELETE FROM materiasejemplares WHERE idEjemplar=1
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (1,3,1)
+--- Finalizando ModificarEjemplarRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT MATERIAS.* FROM MATERIAS WHERE id IN (SELECT DISTINCT idmateria FROM materiasejemplares WHERE idejemplar= 1)
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT AUTORES.* FROM AUTORES WHERE id IN (SELECT DISTINCT idautor FROM autoresejemplares WHERE idejemplar= 1)
+--- BuscarAutoresRequest ---
+1 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (NOT referencia LIKE '%')  LIMIT 2,2
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando TestSetupRequest ---
+
+--- Service ---
+Limpiando la base de datos
+--- Orm ---
+DELETE FROM autoresejemplares
+--- Orm ---
+DELETE FROM materiasejemplares
+--- Orm ---
+DELETE FROM autores
+--- Orm ---
+DELETE FROM materias
+--- Orm ---
+DELETE FROM ejemplares
+--- Orm ---
+ALTER TABLE autores AUTO_INCREMENT=1
+--- Orm ---
+ALTER TABLE materias AUTO_INCREMENT=1
+--- Orm ---
+ALTER TABLE ejemplares AUTO_INCREMENT=1
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Cervantes Saavedra, Miguel')
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Perez Reverte, Arturo')
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Eco, Umberto')
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Kinnang Rawling, Marjorie')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Fantasía Épica')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Novela')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Ciencia Ficción')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Geografía')
+--- Orm ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('RF-0001','Primer titulo','Primera','canaya','11.1','2011-10-24 16:10:04','2011-10-24 16:10:04','2011-10-24 16:10:04','Descripcion 1','Observacion1')
+--- Orm ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('RF-0002','Segundo titulo','Segunda','Alfaguarra','23.4','2011-10-24 16:10:04','2011-10-24 16:10:04','2011-10-24 16:10:04','Descripcion 2','Observacion2')
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (1,1,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (1,2,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (2,3,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (2,4,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (1,1,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (1,2,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (2,3,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (2,4,null)
+--- Finalizando TestSetupRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando NuevaMateriaRequest ---
+
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('nueva materia')
+--- NuevaMateriaRequest ---
+Materia 5 añadida con exito
+--- Finalizando NuevaMateriaRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT * FROM MATERIAS WHERE id = 1
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarMateriaRequest ---
+
+--- Orm ---
+UPDATE `materias` SET `id`=1,`nombre`='materia modificada' WHERE `id`=1
+--- Finalizando ModificarMateriaRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT * FROM MATERIAS WHERE Nombre like '%%%' ORDER BY Nombre ASC
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT * FROM MATERIAS WHERE id = 1
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando NuevoAutorRequest ---
+
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('nuevo autor')
+--- NuevoAutorRequest ---
+Autor 5 añadido con exito
+--- Finalizando NuevoAutorRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE id = 1
+--- BuscarAutoresRequest ---
+1 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarAutorRequest ---
+
+--- Orm ---
+UPDATE `autores` SET `id`=1,`nombre`='autor modificado' WHERE `id`=1
+--- Finalizando ModificarAutorRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE Nombre like '%%%' ORDER BY Nombre ASC
+--- BuscarAutoresRequest ---
+5 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE id = 1
+--- BuscarAutoresRequest ---
+1 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando AltaEjemplarRequest ---
+
+--- Orm ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('rf1','nuevo ejemplar',null,null,'0.0',null,null,null,null,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (3,1,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (3,1,null)
+--- Finalizando AltaEjemplarRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarEjemplarRequest ---
+
+--- Orm ---
+UPDATE `ejemplares` SET `id`=1,`referencia`='RF-0001',`titulo`='Modificado',`edicion`='Primera',`editorial`='canaya',`precio`='11.1',`fechaPublicacion`='2011-10-24T16:10:04.000+02:00',`fechaAlta`='2011-10-24T16:10:04.000+02:00',`fechaModificacion`='2011-10-24T16:10:04.000+02:00',`descripcion`='Descripcion 1',`observaciones`='Observacion1' WHERE `id`=1
+--- Orm ---
+DELETE FROM autoresejemplares WHERE idEjemplar=1
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (1,3,1)
+--- Orm ---
+DELETE FROM materiasejemplares WHERE idEjemplar=1
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (1,3,1)
+--- Finalizando ModificarEjemplarRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT MATERIAS.* FROM MATERIAS WHERE id IN (SELECT DISTINCT idmateria FROM materiasejemplares WHERE idejemplar= 1)
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT AUTORES.* FROM AUTORES WHERE id IN (SELECT DISTINCT idautor FROM autoresejemplares WHERE idejemplar= 1)
+--- BuscarAutoresRequest ---
+1 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (NOT referencia LIKE '%')  LIMIT 2,2
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando TestSetupRequest ---
+
+--- Service ---
+Limpiando la base de datos
+--- Orm ---
+DELETE FROM autoresejemplares
+--- Orm ---
+DELETE FROM materiasejemplares
+--- Orm ---
+DELETE FROM autores
+--- Orm ---
+DELETE FROM materias
+--- Orm ---
+DELETE FROM ejemplares
+--- Orm ---
+ALTER TABLE autores AUTO_INCREMENT=1
+--- Orm ---
+ALTER TABLE materias AUTO_INCREMENT=1
+--- Orm ---
+ALTER TABLE ejemplares AUTO_INCREMENT=1
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Cervantes Saavedra, Miguel')
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Perez Reverte, Arturo')
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Eco, Umberto')
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Kinnang Rawling, Marjorie')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Fantasía Épica')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Novela')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Ciencia Ficción')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Geografía')
+--- Orm ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('RF-0001','Primer titulo','Primera','canaya','11.1','2011-10-24 16:10:11','2011-10-24 16:10:11','2011-10-24 16:10:11','Descripcion 1','Observacion1')
+--- Orm ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('RF-0002','Segundo titulo','Segunda','Alfaguarra','23.4','2011-10-24 16:10:11','2011-10-24 16:10:11','2011-10-24 16:10:11','Descripcion 2','Observacion2')
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (1,1,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (1,2,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (2,3,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (2,4,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (1,1,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (1,2,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (2,3,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (2,4,null)
+--- Finalizando TestSetupRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando NuevaMateriaRequest ---
+
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('nueva materia')
+--- NuevaMateriaRequest ---
+Materia 5 añadida con exito
+--- Finalizando NuevaMateriaRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT * FROM MATERIAS WHERE id = 1
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarMateriaRequest ---
+
+--- Orm ---
+UPDATE `materias` SET `id`=1,`nombre`='materia modificada' WHERE `id`=1
+--- Finalizando ModificarMateriaRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT * FROM MATERIAS WHERE Nombre like '%%%' ORDER BY Nombre ASC
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT * FROM MATERIAS WHERE id = 1
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando NuevoAutorRequest ---
+
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('nuevo autor')
+--- NuevoAutorRequest ---
+Autor 5 añadido con exito
+--- Finalizando NuevoAutorRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE id = 1
+--- BuscarAutoresRequest ---
+1 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarAutorRequest ---
+
+--- Orm ---
+UPDATE `autores` SET `id`=1,`nombre`='autor modificado' WHERE `id`=1
+--- Finalizando ModificarAutorRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE Nombre like '%%%' ORDER BY Nombre ASC
+--- BuscarAutoresRequest ---
+5 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE id = 1
+--- BuscarAutoresRequest ---
+1 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando AltaEjemplarRequest ---
+
+--- Orm ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('rf1','nuevo ejemplar',null,null,'0.0',null,null,null,null,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (3,1,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (3,1,null)
+--- Finalizando AltaEjemplarRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarEjemplarRequest ---
+
+--- Orm ---
+UPDATE `ejemplares` SET `id`=1,`referencia`='RF-0001',`titulo`='Modificado',`edicion`='Primera',`editorial`='canaya',`precio`='11.1',`fechaPublicacion`='2011-10-24T16:10:11.000+02:00',`fechaAlta`='2011-10-24T16:10:11.000+02:00',`fechaModificacion`='2011-10-24T16:10:11.000+02:00',`descripcion`='Descripcion 1',`observaciones`='Observacion1' WHERE `id`=1
+--- Orm ---
+DELETE FROM autoresejemplares WHERE idEjemplar=1
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (1,3,1)
+--- Orm ---
+DELETE FROM materiasejemplares WHERE idEjemplar=1
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (1,3,1)
+--- Finalizando ModificarEjemplarRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT MATERIAS.* FROM MATERIAS WHERE id IN (SELECT DISTINCT idmateria FROM materiasejemplares WHERE idejemplar= 1)
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT AUTORES.* FROM AUTORES WHERE id IN (SELECT DISTINCT idautor FROM autoresejemplares WHERE idejemplar= 1)
+--- BuscarAutoresRequest ---
+1 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (NOT referencia LIKE '%')  LIMIT 2,2
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando TestSetupRequest ---
+
+--- Service ---
+Limpiando la base de datos
+--- Orm ---
+DELETE FROM autoresejemplares
+--- Orm ---
+DELETE FROM materiasejemplares
+--- Orm ---
+DELETE FROM autores
+--- Orm ---
+DELETE FROM materias
+--- Orm ---
+DELETE FROM ejemplares
+--- Orm ---
+ALTER TABLE autores AUTO_INCREMENT=1
+--- Orm ---
+ALTER TABLE materias AUTO_INCREMENT=1
+--- Orm ---
+ALTER TABLE ejemplares AUTO_INCREMENT=1
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Cervantes Saavedra, Miguel')
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Perez Reverte, Arturo')
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Eco, Umberto')
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Kinnang Rawling, Marjorie')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Fantasía Épica')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Novela')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Ciencia Ficción')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Geografía')
+--- Orm ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('RF-0001','Primer titulo','Primera','canaya','11.1','2011-10-24 16:10:40','2011-10-24 16:10:40','2011-10-24 16:10:40','Descripcion 1','Observacion1')
+--- Orm ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('RF-0002','Segundo titulo','Segunda','Alfaguarra','23.4','2011-10-24 16:10:40','2011-10-24 16:10:40','2011-10-24 16:10:40','Descripcion 2','Observacion2')
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (1,1,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (1,2,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (2,3,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (2,4,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (1,1,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (1,2,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (2,3,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (2,4,null)
+--- Finalizando TestSetupRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando NuevaMateriaRequest ---
+
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('nueva materia')
+--- NuevaMateriaRequest ---
+Materia 5 añadida con exito
+--- Finalizando NuevaMateriaRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT * FROM MATERIAS WHERE id = 1
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarMateriaRequest ---
+
+--- Orm ---
+UPDATE `materias` SET `id`=1,`nombre`='materia modificada' WHERE `id`=1
+--- Finalizando ModificarMateriaRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT * FROM MATERIAS WHERE Nombre like '%%%' ORDER BY Nombre ASC
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT * FROM MATERIAS WHERE id = 1
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando NuevoAutorRequest ---
+
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('nuevo autor')
+--- NuevoAutorRequest ---
+Autor 5 añadido con exito
+--- Finalizando NuevoAutorRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE id = 1
+--- BuscarAutoresRequest ---
+1 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarAutorRequest ---
+
+--- Orm ---
+UPDATE `autores` SET `id`=1,`nombre`='autor modificado' WHERE `id`=1
+--- Finalizando ModificarAutorRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE Nombre like '%%%' ORDER BY Nombre ASC
+--- BuscarAutoresRequest ---
+5 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE id = 1
+--- BuscarAutoresRequest ---
+1 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando AltaEjemplarRequest ---
+
+--- Orm ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('rf1','nuevo ejemplar',null,null,'0.0',null,null,null,null,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (3,1,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (3,1,null)
+--- Finalizando AltaEjemplarRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarEjemplarRequest ---
+
+--- Orm ---
+UPDATE `ejemplares` SET `id`=1,`referencia`='RF-0001',`titulo`='Modificado',`edicion`='Primera',`editorial`='canaya',`precio`='11.1',`fechaPublicacion`='2011-10-24T16:10:40.000+02:00',`fechaAlta`='2011-10-24T16:10:40.000+02:00',`fechaModificacion`='2011-10-24T16:10:40.000+02:00',`descripcion`='Descripcion 1',`observaciones`='Observacion1' WHERE `id`=1
+--- Orm ---
+DELETE FROM autoresejemplares WHERE idEjemplar=1
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (1,3,1)
+--- Orm ---
+DELETE FROM materiasejemplares WHERE idEjemplar=1
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (1,3,1)
+--- Finalizando ModificarEjemplarRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT MATERIAS.* FROM MATERIAS WHERE id IN (SELECT DISTINCT idmateria FROM materiasejemplares WHERE idejemplar= 1)
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT AUTORES.* FROM AUTORES WHERE id IN (SELECT DISTINCT idautor FROM autoresejemplares WHERE idejemplar= 1)
+--- BuscarAutoresRequest ---
+1 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (NOT referencia LIKE '%')  LIMIT 2,2
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando TestSetupRequest ---
+
+--- Service ---
+Limpiando la base de datos
+--- Orm ---
+DELETE FROM autoresejemplares
+--- Orm ---
+DELETE FROM materiasejemplares
+--- Orm ---
+DELETE FROM autores
+--- Orm ---
+DELETE FROM materias
+--- Orm ---
+DELETE FROM ejemplares
+--- Orm ---
+ALTER TABLE autores AUTO_INCREMENT=1
+--- Orm ---
+ALTER TABLE materias AUTO_INCREMENT=1
+--- Orm ---
+ALTER TABLE ejemplares AUTO_INCREMENT=1
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Cervantes Saavedra, Miguel')
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Perez Reverte, Arturo')
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Eco, Umberto')
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Kinnang Rawling, Marjorie')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Fantasía Épica')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Novela')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Ciencia Ficción')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Geografía')
+--- Orm ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('RF-0001','Primer titulo','Primera','canaya','11.1','2011-10-24 16:10:01','2011-10-24 16:10:01','2011-10-24 16:10:01','Descripcion 1','Observacion1')
+--- Orm ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('RF-0002','Segundo titulo','Segunda','Alfaguarra','23.4','2011-10-24 16:10:01','2011-10-24 16:10:01','2011-10-24 16:10:01','Descripcion 2','Observacion2')
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (1,1,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (1,2,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (2,3,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (2,4,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (1,1,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (1,2,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (2,3,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (2,4,null)
+--- Finalizando TestSetupRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando NuevaMateriaRequest ---
+
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('nueva materia')
+--- NuevaMateriaRequest ---
+Materia 5 añadida con exito
+--- Finalizando NuevaMateriaRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT * FROM MATERIAS WHERE id = 1
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarMateriaRequest ---
+
+--- Orm ---
+UPDATE `materias` SET `id`=1,`nombre`='materia modificada' WHERE `id`=1
+--- Finalizando ModificarMateriaRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT * FROM MATERIAS WHERE Nombre like '%%%' ORDER BY Nombre ASC
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT * FROM MATERIAS WHERE id = 1
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando NuevoAutorRequest ---
+
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('nuevo autor')
+--- NuevoAutorRequest ---
+Autor 5 añadido con exito
+--- Finalizando NuevoAutorRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE id = 1
+--- BuscarAutoresRequest ---
+1 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarAutorRequest ---
+
+--- Orm ---
+UPDATE `autores` SET `id`=1,`nombre`='autor modificado' WHERE `id`=1
+--- Finalizando ModificarAutorRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE Nombre like '%%%' ORDER BY Nombre ASC
+--- BuscarAutoresRequest ---
+5 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE id = 1
+--- BuscarAutoresRequest ---
+1 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando AltaEjemplarRequest ---
+
+--- Orm ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('rf1','nuevo ejemplar',null,null,null,null,null,null,null,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (3,1,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (3,1,null)
+--- Finalizando AltaEjemplarRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarEjemplarRequest ---
+
+--- Orm ---
+UPDATE `ejemplares` SET `id`=1,`referencia`='RF-0001',`titulo`='Modificado',`edicion`='Primera',`editorial`='canaya',`precio`=null,`fechaPublicacion`=null,`fechaAlta`=null,`fechaModificacion`=null,`descripcion`='Descripcion 1',`observaciones`='Observacion1' WHERE `id`=1
+--- Orm ---
+DELETE FROM autoresejemplares WHERE idEjemplar=1
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (1,3,1)
+--- Orm ---
+DELETE FROM materiasejemplares WHERE idEjemplar=1
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (1,3,1)
+--- Finalizando ModificarEjemplarRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT MATERIAS.* FROM MATERIAS WHERE id IN (SELECT DISTINCT idmateria FROM materiasejemplares WHERE idejemplar= 1)
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT AUTORES.* FROM AUTORES WHERE id IN (SELECT DISTINCT idautor FROM autoresejemplares WHERE idejemplar= 1)
+--- BuscarAutoresRequest ---
+1 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (referencia LIKE '%')  LIMIT 2,2
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=3 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=3 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando TestSetupRequest ---
+
+--- Service ---
+Limpiando la base de datos
+--- Orm ---
+DELETE FROM autoresejemplares
+--- Orm ---
+DELETE FROM materiasejemplares
+--- Orm ---
+DELETE FROM autores
+--- Orm ---
+DELETE FROM materias
+--- Orm ---
+DELETE FROM ejemplares
+--- Orm ---
+ALTER TABLE autores AUTO_INCREMENT=1
+--- Orm ---
+ALTER TABLE materias AUTO_INCREMENT=1
+--- Orm ---
+ALTER TABLE ejemplares AUTO_INCREMENT=1
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Cervantes Saavedra, Miguel')
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Perez Reverte, Arturo')
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Eco, Umberto')
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Kinnang Rawling, Marjorie')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Fantasía Épica')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Novela')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Ciencia Ficción')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Geografía')
+--- Orm ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('RF-0001','Primer titulo','Primera','canaya','11.1','2011-10-24 16:10:32','2011-10-24 16:10:32','2011-10-24 16:10:32','Descripcion 1','Observacion1')
+--- Orm ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('RF-0002','Segundo titulo','Segunda','Alfaguarra','23.4','2011-10-24 16:10:32','2011-10-24 16:10:32','2011-10-24 16:10:32','Descripcion 2','Observacion2')
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (1,1,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (1,2,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (2,3,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (2,4,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (1,1,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (1,2,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (2,3,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (2,4,null)
+--- Finalizando TestSetupRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando NuevaMateriaRequest ---
+
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('nueva materia')
+--- NuevaMateriaRequest ---
+Materia 5 añadida con exito
+--- Finalizando NuevaMateriaRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT * FROM MATERIAS WHERE id = 1
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarMateriaRequest ---
+
+--- Orm ---
+UPDATE `materias` SET `id`=1,`nombre`='materia modificada' WHERE `id`=1
+--- Finalizando ModificarMateriaRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT * FROM MATERIAS WHERE Nombre like '%%%' ORDER BY Nombre ASC
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT * FROM MATERIAS WHERE id = 1
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando NuevoAutorRequest ---
+
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('nuevo autor')
+--- NuevoAutorRequest ---
+Autor 5 añadido con exito
+--- Finalizando NuevoAutorRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE id = 1
+--- BuscarAutoresRequest ---
+1 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarAutorRequest ---
+
+--- Orm ---
+UPDATE `autores` SET `id`=1,`nombre`='autor modificado' WHERE `id`=1
+--- Finalizando ModificarAutorRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE Nombre like '%%%' ORDER BY Nombre ASC
+--- BuscarAutoresRequest ---
+5 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE id = 1
+--- BuscarAutoresRequest ---
+1 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando AltaEjemplarRequest ---
+
+--- Orm ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('rf1','nuevo ejemplar',null,null,null,null,null,null,null,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (3,1,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (3,1,null)
+--- Finalizando AltaEjemplarRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarEjemplarRequest ---
+
+--- Orm ---
+UPDATE `ejemplares` SET `id`=1,`referencia`='RF-0001',`titulo`='Modificado',`edicion`='Primera',`editorial`='canaya',`precio`=null,`fechaPublicacion`=null,`fechaAlta`=null,`fechaModificacion`=null,`descripcion`='Descripcion 1',`observaciones`='Observacion1' WHERE `id`=1
+--- Orm ---
+DELETE FROM autoresejemplares WHERE idEjemplar=1
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (1,3,1)
+--- Orm ---
+DELETE FROM materiasejemplares WHERE idEjemplar=1
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (1,3,1)
+--- Finalizando ModificarEjemplarRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT MATERIAS.* FROM MATERIAS WHERE id IN (SELECT DISTINCT idmateria FROM materiasejemplares WHERE idejemplar= 1)
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT AUTORES.* FROM AUTORES WHERE id IN (SELECT DISTINCT idautor FROM autoresejemplares WHERE idejemplar= 1)
+--- BuscarAutoresRequest ---
+1 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (referencia LIKE '%')  LIMIT 2,2
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=3 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=3 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (Referencia = rf-001) 
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (referencia = 'RF-001') 
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (referencia LIKE '%') 
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=2 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=2 ORDER BY materiasejemplares.orden ASC
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=3 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=3 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (referencia LIKE '%')  LIMIT 0,2
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=2 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=2 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando TestSetupRequest ---
+
+--- Service ---
+Limpiando la base de datos
+--- Orm ---
+DELETE FROM autoresejemplares
+--- Orm ---
+DELETE FROM materiasejemplares
+--- Orm ---
+DELETE FROM autores
+--- Orm ---
+DELETE FROM materias
+--- Orm ---
+DELETE FROM ejemplares
+--- Orm ---
+ALTER TABLE autores AUTO_INCREMENT=1
+--- Orm ---
+ALTER TABLE materias AUTO_INCREMENT=1
+--- Orm ---
+ALTER TABLE ejemplares AUTO_INCREMENT=1
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Cervantes Saavedra, Miguel')
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Perez Reverte, Arturo')
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Eco, Umberto')
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Kinnang Rawling, Marjorie')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Fantasía Épica')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Novela')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Ciencia Ficción')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Geografía')
+--- Orm ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('RF-0001','Primer titulo','Primera','canaya','11.1','2011-10-24 17:10:10','2011-10-24 17:10:10','2011-10-24 17:10:10','Descripcion 1','Observacion1')
+--- Orm ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('RF-0002','Segundo titulo','Segunda','Alfaguarra','23.4','2011-10-24 17:10:10','2011-10-24 17:10:10','2011-10-24 17:10:10','Descripcion 2','Observacion2')
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (1,1,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (1,2,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (2,3,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (2,4,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (1,1,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (1,2,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (2,3,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (2,4,null)
+--- Finalizando TestSetupRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando NuevaMateriaRequest ---
+
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('nueva materia')
+--- NuevaMateriaRequest ---
+Materia 5 añadida con exito
+--- Finalizando NuevaMateriaRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT * FROM MATERIAS WHERE id = 1
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarMateriaRequest ---
+
+--- Orm ---
+UPDATE `materias` SET `id`=1,`nombre`='materia modificada' WHERE `id`=1
+--- Finalizando ModificarMateriaRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT * FROM MATERIAS WHERE Nombre like '%%%' ORDER BY Nombre ASC
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT * FROM MATERIAS WHERE id = 1
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando NuevoAutorRequest ---
+
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('nuevo autor')
+--- NuevoAutorRequest ---
+Autor 5 añadido con exito
+--- Finalizando NuevoAutorRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE id = 1
+--- BuscarAutoresRequest ---
+1 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarAutorRequest ---
+
+--- Orm ---
+UPDATE `autores` SET `id`=1,`nombre`='autor modificado' WHERE `id`=1
+--- Finalizando ModificarAutorRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE Nombre like '%%%' ORDER BY Nombre ASC
+--- BuscarAutoresRequest ---
+5 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE id = 1
+--- BuscarAutoresRequest ---
+1 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando AltaEjemplarRequest ---
+
+--- Orm ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('rf1','nuevo ejemplar',null,null,null,null,null,null,null,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (3,1,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (3,1,null)
+--- Finalizando AltaEjemplarRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarEjemplarRequest ---
+
+--- Orm ---
+UPDATE `ejemplares` SET `id`=1,`referencia`='RF-0001',`titulo`='Modificado',`edicion`='Primera',`editorial`='canaya',`precio`=null,`fechaPublicacion`=null,`fechaAlta`=null,`fechaModificacion`=null,`descripcion`='Descripcion 1',`observaciones`='Observacion1' WHERE `id`=1
+--- Orm ---
+DELETE FROM autoresejemplares WHERE idEjemplar=1
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (1,3,1)
+--- Orm ---
+DELETE FROM materiasejemplares WHERE idEjemplar=1
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (1,3,1)
+--- Finalizando ModificarEjemplarRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT MATERIAS.* FROM MATERIAS WHERE id IN (SELECT DISTINCT idmateria FROM materiasejemplares WHERE idejemplar= 1)
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT AUTORES.* FROM AUTORES WHERE id IN (SELECT DISTINCT idautor FROM autoresejemplares WHERE idejemplar= 1)
+--- BuscarAutoresRequest ---
+1 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (referencia LIKE '%')  LIMIT 2,2
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=3 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=3 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=2
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=2 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=2 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE Nombre like '%%%%' ORDER BY Nombre ASC
+--- BuscarAutoresRequest ---
+5 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarEjemplarRequest ---
+
+--- Orm ---
+UPDATE `ejemplares` SET `id`=2,`referencia`='RF-0002',`titulo`='Segundo titulo',`edicion`='Segunda',`editorial`='Alfaguarra',`precio`=null,`fechaPublicacion`=null,`fechaAlta`=null,`fechaModificacion`=null,`descripcion`='Descripcion 2',`observaciones`='Sin observaciones por el momento' WHERE `id`=2
+--- Orm ---
+DELETE FROM autoresejemplares WHERE idEjemplar=2
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (2,2,1)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (2,4,2)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (2,3,3)
+--- Orm ---
+DELETE FROM materiasejemplares WHERE idEjemplar=2
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (2,4,1)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (2,3,2)
+--- Finalizando ModificarEjemplarRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (referencia = 'RF-001') 
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (referencia LIKE '%')  LIMIT 0,2
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=2 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=2 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (referencia = 'RF-001') 
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (referencia LIKE 'RF') 
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando TestSetupRequest ---
+
+--- Service ---
+Limpiando la base de datos
+--- Orm ---
+DELETE FROM autoresejemplares
+--- Orm ---
+DELETE FROM materiasejemplares
+--- Orm ---
+DELETE FROM autores
+--- Orm ---
+DELETE FROM materias
+--- Orm ---
+DELETE FROM ejemplares
+--- Orm ---
+ALTER TABLE autores AUTO_INCREMENT=1
+--- Orm ---
+ALTER TABLE materias AUTO_INCREMENT=1
+--- Orm ---
+ALTER TABLE ejemplares AUTO_INCREMENT=1
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Cervantes Saavedra, Miguel')
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Perez Reverte, Arturo')
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Eco, Umberto')
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('Kinnang Rawling, Marjorie')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Fantasía Épica')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Novela')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Ciencia Ficción')
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('Geografía')
+--- Orm ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('RF-0001','Primer titulo','Primera','canaya','11.1','2012-01-04 13:01:29','2012-01-04 13:01:28','2012-01-04 13:01:29','Descripcion 1','Observacion1')
+--- Orm ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('RF-0002','Segundo titulo','Segunda','Alfaguarra','23.4','2012-01-04 13:01:29','2012-01-04 13:01:29','2012-01-04 13:01:29','Descripcion 2','Observacion2')
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (1,1,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (1,2,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (2,3,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (2,4,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (1,1,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (1,2,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (2,3,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (2,4,null)
+--- Finalizando TestSetupRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando NuevaMateriaRequest ---
+
+--- Orm ---
+INSERT INTO `materias`(`nombre`) VALUES ('nueva materia')
+--- NuevaMateriaRequest ---
+Materia 5 añadida con exito
+--- Finalizando NuevaMateriaRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT * FROM MATERIAS WHERE id = 1
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarMateriaRequest ---
+
+--- Orm ---
+UPDATE `materias` SET `id`=1,`nombre`='materia modificada' WHERE `id`=1
+--- Finalizando ModificarMateriaRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT * FROM MATERIAS WHERE Nombre like '%%%' ORDER BY Nombre ASC
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT * FROM MATERIAS WHERE id = 1
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando NuevoAutorRequest ---
+
+--- Orm ---
+INSERT INTO `autores`(`nombre`) VALUES ('nuevo autor')
+--- NuevoAutorRequest ---
+Autor 5 añadido con exito
+--- Finalizando NuevoAutorRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE id = 1
+--- BuscarAutoresRequest ---
+1 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarAutorRequest ---
+
+--- Orm ---
+UPDATE `autores` SET `id`=1,`nombre`='autor modificado' WHERE `id`=1
+--- Finalizando ModificarAutorRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE Nombre like '%%%' ORDER BY Nombre ASC
+--- BuscarAutoresRequest ---
+5 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT * FROM AUTORES WHERE id = 1
+--- BuscarAutoresRequest ---
+1 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando AltaEjemplarRequest ---
+
+--- Orm ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('rf1','nuevo ejemplar',null,null,null,null,null,null,null,null)
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (3,1,null)
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (3,1,null)
+--- Finalizando AltaEjemplarRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando ModificarEjemplarRequest ---
+
+--- Orm ---
+UPDATE `ejemplares` SET `id`=1,`referencia`='RF-0001',`titulo`='Modificado',`edicion`='Primera',`editorial`='canaya',`precio`=null,`fechaPublicacion`=null,`fechaAlta`=null,`fechaModificacion`=null,`descripcion`='Descripcion 1',`observaciones`='Observacion1' WHERE `id`=1
+--- Orm ---
+DELETE FROM autoresejemplares WHERE idEjemplar=1
+--- Orm ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`,`orden`) VALUES (1,3,1)
+--- Orm ---
+DELETE FROM materiasejemplares WHERE idEjemplar=1
+--- Orm ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`,`orden`) VALUES (1,3,1)
+--- Finalizando ModificarEjemplarRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarMateriasRequest ---
+
+--- Orm ---
+SELECT MATERIAS.* FROM MATERIAS WHERE id IN (SELECT DISTINCT idmateria FROM materiasejemplares WHERE idejemplar= 1)
+--- Finalizando BuscarMateriasRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarAutoresRequest ---
+
+--- Orm ---
+SELECT AUTORES.* FROM AUTORES WHERE id IN (SELECT DISTINCT idautor FROM autoresejemplares WHERE idejemplar= 1)
+--- BuscarAutoresRequest ---
+1 autores encontrados
+--- Finalizando BuscarAutoresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE (referencia LIKE '%')  LIMIT 2,2
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=3 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=3 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+
+--- Inicio del log ---
+
+--- Comenzando BuscarEjemplaresRequest ---
+
+--- Orm ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares`  WHERE `id`=1
+--- Orm ---
+SELECT autores.* FROM autores LEFT JOIN autoresejemplares on autoresejemplares.idAutor=autores.id WHERE autoresejemplares.idEjemplar=1 ORDER BY autoresejemplares.orden ASC
+--- Orm ---
+SELECT materias.* FROM materias LEFT JOIN materiasejemplares on materiasejemplares.idMateria=materias.id WHERE materiasejemplares.idEjemplar=1 ORDER BY materiasejemplares.orden ASC
+--- Finalizando BuscarEjemplaresRequest ---
+

@@ -1,0 +1,80 @@
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares` WHERE referencia like '%'DELETE FROM autoresejemplaresDELETE FROM materiasejemplaresDELETE FROM autoresDELETE FROM materiasDELETE FROM ejemplaresALTER TABLE autores AUTO_INCREMENT=1ALTER TABLE materias AUTO_INCREMENT=1ALTER TABLE ejemplares AUTO_INCREMENT=1INSERT INTO `autores`(`nombre`) VALUES ('Cervantes Saavedra, Miguel')INSERT INTO `autores`(`nombre`) VALUES ('Perez Reverte, Arturo')INSERT INTO `autores`(`nombre`) VALUES ('Eco, Umberto')INSERT INTO `autores`(`nombre`) VALUES ('Kinnang Rawling, Marjorie')INSERT INTO `materias`(`nombre`) VALUES ('Fantasía Épica')INSERT INTO `materias`(`nombre`) VALUES ('Novela')INSERT INTO `materias`(`nombre`) VALUES ('Ciencia Ficción')INSERT INTO `materias`(`nombre`) VALUES ('Geografía')INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('RF-0001','Primer titulo','Primera','canaya','11.1','11111111-0909-1313 0909:0909:4747','11111111-0909-1313 0909:0909:4747','11111111-0909-1313 0909:0909:4747','Descripcion 1','Observacion1')INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('RF-0002','Segundo titulo','Segunda','Alfaguarra','23.4','11111111-0909-1313 0909:0909:4747','11111111-0909-1313 0909:0909:4747','11111111-0909-1313 0909:0909:4747','Descripcion 2','Observacion2')INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`) VALUES (1,1)INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`) VALUES (1,2)INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`) VALUES (2,3)INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`) VALUES (2,4)INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`) VALUES (1,1)INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`) VALUES (1,2)INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`) VALUES (2,3)INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`) VALUES (2,4)INSERT INTO `materias`(`nombre`) VALUES ('nueva materia')SELECT * FROM MATERIAS WHERE id = 1UPDATE `materias` SET `id`=1,`nombre`='materia modificada' WHERE `id`=1SELECT * FROM MATERIAS WHERE Nombre like '%%%' ORDER BY Nombre ASCSELECT * FROM MATERIAS WHERE id = 1INSERT INTO `autores`(`nombre`) VALUES ('nuevo autor')SELECT * FROM AUTORES WHERE id = 1UPDATE `autores` SET `id`=1,`nombre`='autor modificado' WHERE `id`=1SELECT * FROM AUTORES WHERE Nombre like '%%%' ORDER BY Nombre ASCSELECT * FROM AUTORES WHERE id = 1INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('rf1','nuevo ejemplar',null,null,'0.0',null,null,null,null,null)SELECT MATERIAS.* FROM MATERIAS WHERE id IN (SELECT DISTINCT idmateria FROM materiasejemplares WHERE idejemplar= 1)SELECT AUTORES.* FROM AUTORES WHERE id IN (SELECT DISTINCT idautor FROM autoresejemplares WHERE idejemplar= 1)SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares` WHERE referencia like '%'--- SQL ---
+DELETE FROM autoresejemplares
+--- SQL ---
+DELETE FROM materiasejemplares
+--- SQL ---
+DELETE FROM autores
+--- SQL ---
+DELETE FROM materias
+--- SQL ---
+DELETE FROM ejemplares
+--- SQL ---
+ALTER TABLE autores AUTO_INCREMENT=1
+--- SQL ---
+ALTER TABLE materias AUTO_INCREMENT=1
+--- SQL ---
+ALTER TABLE ejemplares AUTO_INCREMENT=1
+--- SQL ---
+INSERT INTO `autores`(`nombre`) VALUES ('Cervantes Saavedra, Miguel')
+--- SQL ---
+INSERT INTO `autores`(`nombre`) VALUES ('Perez Reverte, Arturo')
+--- SQL ---
+INSERT INTO `autores`(`nombre`) VALUES ('Eco, Umberto')
+--- SQL ---
+INSERT INTO `autores`(`nombre`) VALUES ('Kinnang Rawling, Marjorie')
+--- SQL ---
+INSERT INTO `materias`(`nombre`) VALUES ('Fantasía Épica')
+--- SQL ---
+INSERT INTO `materias`(`nombre`) VALUES ('Novela')
+--- SQL ---
+INSERT INTO `materias`(`nombre`) VALUES ('Ciencia Ficción')
+--- SQL ---
+INSERT INTO `materias`(`nombre`) VALUES ('Geografía')
+--- SQL ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('RF-0001','Primer titulo','Primera','canaya','11.1','11111111-0909-1313 0909:0909:1313','11111111-0909-1313 0909:0909:1313','11111111-0909-1313 0909:0909:1313','Descripcion 1','Observacion1')
+--- SQL ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('RF-0002','Segundo titulo','Segunda','Alfaguarra','23.4','11111111-0909-1313 0909:0909:1313','11111111-0909-1313 0909:0909:1313','11111111-0909-1313 0909:0909:1313','Descripcion 2','Observacion2')
+--- SQL ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`) VALUES (1,1)
+--- SQL ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`) VALUES (1,2)
+--- SQL ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`) VALUES (2,3)
+--- SQL ---
+INSERT INTO `autoresejemplares`(`idEjemplar`,`idAutor`) VALUES (2,4)
+--- SQL ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`) VALUES (1,1)
+--- SQL ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`) VALUES (1,2)
+--- SQL ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`) VALUES (2,3)
+--- SQL ---
+INSERT INTO `materiasejemplares`(`idEjemplar`,`idMateria`) VALUES (2,4)
+--- SQL ---
+INSERT INTO `materias`(`nombre`) VALUES ('nueva materia')
+--- SQL ---
+SELECT * FROM MATERIAS WHERE id = 1
+--- SQL ---
+UPDATE `materias` SET `id`=1,`nombre`='materia modificada' WHERE `id`=1
+--- SQL ---
+SELECT * FROM MATERIAS WHERE Nombre like '%%%' ORDER BY Nombre ASC
+--- SQL ---
+SELECT * FROM MATERIAS WHERE id = 1
+--- SQL ---
+INSERT INTO `autores`(`nombre`) VALUES ('nuevo autor')
+--- SQL ---
+SELECT * FROM AUTORES WHERE id = 1
+--- SQL ---
+UPDATE `autores` SET `id`=1,`nombre`='autor modificado' WHERE `id`=1
+--- SQL ---
+SELECT * FROM AUTORES WHERE Nombre like '%%%' ORDER BY Nombre ASC
+--- SQL ---
+SELECT * FROM AUTORES WHERE id = 1
+--- SQL ---
+INSERT INTO `ejemplares`(`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones`) VALUES ('rf1','nuevo ejemplar',null,null,'0.0',null,null,null,null,null)
+--- SQL ---
+SELECT MATERIAS.* FROM MATERIAS WHERE id IN (SELECT DISTINCT idmateria FROM materiasejemplares WHERE idejemplar= 1)
+--- SQL ---
+SELECT AUTORES.* FROM AUTORES WHERE id IN (SELECT DISTINCT idautor FROM autoresejemplares WHERE idejemplar= 1)
+--- SQL ---
+SELECT `id`,`referencia`,`titulo`,`edicion`,`editorial`,`precio`,`fechaPublicacion`,`fechaAlta`,`fechaModificacion`,`descripcion`,`observaciones` FROM `ejemplares` WHERE referencia like '%'

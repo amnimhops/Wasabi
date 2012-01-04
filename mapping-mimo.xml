@@ -1,0 +1,354 @@
+<?xml version="1.0"?>
+<!DOCTYPE mapping PUBLIC "-//EXOLAB/Castor Mapping DTD Version 1.0//EN" "http://castor.org/mapping.dtd">
+<mapping>
+	<description>Description of the mapping</description>
+	<!-- Mapeos para clase de configuracion !-->
+	<class name="com.mimolibros.wasabi.client.entities.Parametro">
+		<map-to xml="parametro" />
+		<field name="nombre" type="string">
+			<bind-xml name="nombre" node="attribute" />
+		</field>
+		<field name="valor" type="string">
+			<bind-xml name="valor" node="element" />
+		</field>
+	</class>
+	
+	<class name="com.mimolibros.wasabi.client.entities.Seccion">
+		<map-to xml="seccion" />
+		<field name="parametros" type="com.mimolibros.wasabi.client.entities.Parametro" collection="arraylist" container="false">
+			<bind-xml name="parametros" />
+		</field>
+	</class>
+	
+	<class name="com.mimolibros.wasabi.client.entities.Configuracion">
+		<map-to xml="configuracion" />
+		<field name="secciones" type="com.mimolibros.wasabi.client.entities.Seccion" collection="arraylist" container="false">
+			<bind-xml name="secciones" />
+		</field>
+	</class>
+	<!-- Mapeos basicos de peticiones y respuestas !-->
+	<class name="com.mimolibros.wasabi.client.request.Login">
+		<map-to xml="login" />
+		<field name="usuario" type="string">
+			<bind-xml name="usuario" node="element" />
+		</field>
+		<field name="clave" type="string">
+			<bind-xml name="clave" node="element" />
+		</field>
+	</class>
+	
+	<class name="com.mimolibros.wasabi.client.request.Error">
+		<map-to xml="error" />
+		<field name="id" type="string">
+			<bind-xml name="id" node="attribute" />
+		</field>
+		<field name="descripcion" type="string">
+			<bind-xml name="descripcion" node="element" />
+		</field>
+	</class>
+		
+	
+	<class name="com.mimolibros.wasabi.client.request.Request">
+		<map-to xml="request" />
+		<field name="login" type="com.mimolibros.wasabi.client.request.Login">
+			<bind-xml name="login" node="element" />
+		</field>
+	</class>
+	
+	<class name="com.mimolibros.wasabi.client.request.Estado">
+		<map-to xml="estado" />
+		<field name="ok" type="boolean">
+			<bind-xml name="ok" node="element" />
+		</field>
+		<field name="errores" type="com.mimolibros.wasabi.client.request.Error" collection="arraylist" container="false">
+			<bind-xml name="errores" />
+		</field>
+	</class>
+	
+	<class name="com.mimolibros.wasabi.client.request.Response">
+		<map-to xml="response" />
+		<field name="estado" type="com.mimolibros.wasabi.client.request.Estado">
+			<bind-xml name="estado" node="element" />
+		</field>
+	</class>
+
+<!-- mapeos de beans !-->
+	<class name="com.mimolibros.wasabi.client.entities.Autor">
+		<map-to xml="autor"/>
+		<field name="id" type="integer">
+			<bind-xml name="id" node="attribute" />
+		</field>
+		<field name="nombre" type="string">
+			<bind-xml name="nombre" node="element" />
+		</field>
+	</class>
+	<class name="com.mimolibros.wasabi.client.entities.AutorEjemplar">
+		<map-to xml="autor_ejemplar" />
+		<field name="idAutor" type="integer">
+			<bind-xml name="idautor" node="attribute" />
+		</field>
+		<field name="idEjemplar" type="integer">
+			<bind-xml name="idejemplar" node="attribute" />
+		</field>
+		<field name="orden" type="integer">
+			<bind-xml name="orden" node="attribute" />
+		</field>
+	</class>
+	<class name="com.mimolibros.wasabi.client.entities.Materia">
+		<map-to xml="materia" />
+		<field name="id" type="integer">
+			<bind-xml name="id" node="attribute" />
+		</field>
+		<field name="nombre" type="string">
+			<bind-xml name="nombre" node="element" />
+		</field>
+	</class>
+		<class name="com.mimolibros.wasabi.client.entities.MateriaEjemplar">
+		<map-to xml="materia_ejemplar" />
+		<field name="idMateria" type="integer">
+			<bind-xml name="idmateria" node="attribute" />
+		</field>
+		<field name="idEjemplar" type="integer">
+			<bind-xml name="idejemplar" node="attribute" />
+		</field>
+		<field name="orden" type="integer">
+			<bind-xml name="orden" node="attribute" />
+		</field>
+		
+	</class>
+	<class name="com.mimolibros.wasabi.client.entities.Ejemplar">
+		<map-to xml="ejemplar" />
+		<field name="id" type="integer">
+			<bind-xml name="id" node="attribute" />
+		</field>
+		<field name="referencia" type="string">
+			<bind-xml name="referencia" node="element" />
+		</field>
+		<field name="titulo" type="string">
+			<bind-xml name="titulo" node="element" />
+		</field>
+		<field name="edicion" type="string">
+			<bind-xml name="edicion" node="element" />
+		</field>
+		<field name="editorial" type="string">
+			<bind-xml name="editorial" node="element" />
+		</field>
+		<field name="precio" type="float">
+			<bind-xml name="precio" node="element" />
+		</field>
+		<field name="fechaPublicacion" type="date">
+			<bind-xml name="fecha_publicacion" node="element" />
+		</field>
+		<field name="fechaAlta" type="date">
+			<bind-xml name="fecha_alta" node="element" />
+		</field>
+		<field name="fechaModificacion" type="date">
+			<bind-xml name="fecha_modificacion" node="element" />
+		</field>
+		<field name="descripcion" type="string">
+			<bind-xml name="descripcion" node="element" />
+		</field>
+		<field name="observaciones" type="string">
+			<bind-xml name="observaciones" node="element" />
+		</field>
+		<field name="materias" type="com.mimolibros.wasabi.client.entities.Materia" collection="arraylist" container="false">
+			<bind-xml name="materias" />
+		</field>
+		<field name="autores" type="com.mimolibros.wasabi.client.entities.Autor" collection="arraylist" container="false">
+			<bind-xml name="autores" />
+		</field>	
+	</class>	
+	
+	<class name="com.mimolibros.wasabi.client.entities.ParametrosBusquedaEjemplar">
+		<map-to xml="parametros_busqueda" />
+		
+		<field name="id" type="integer">
+			<bind-xml name="id" node="element" />
+		</field>
+		<field name="resultadosPorPagina" type="integer">
+			<bind-xml name="resultados_por_pagina" node="element" />
+		</field>
+		<field name="pagina" type="integer">
+			<bind-xml name="pagina" node="element" />
+		</field>
+		
+		<field name="grupos" type="com.mimolibros.wasabi.client.entities.GrupoCriteriosBusquedaEjemplar" collection="arraylist" container="false">
+			<bind-xml name="grupos_criterios_busqueda" />
+		</field>		
+	</class>
+	
+	<class name="com.mimolibros.wasabi.client.entities.GrupoCriteriosBusquedaEjemplar">
+		<map-to xml="grupo_criterios_busqueda" />
+		<field name="opcional" type="boolean">
+			<bind-xml name="opcional" node="attribute" />
+		</field>
+		<field name="invertir" type="boolean">
+			<bind-xml name="invertir" node="attribute" />
+		</field>
+		
+		<field name="criterios" type="com.mimolibros.wasabi.client.entities.CriterioBusquedaEjemplar" collection="arraylist" container="false">
+			<bind-xml name="criterios_busqueda" />
+		</field>
+	</class>
+	
+	<class name="com.mimolibros.wasabi.client.entities.CriterioBusquedaEjemplar">
+		<map-to xml="criterio_busqueda" />
+		<field name="campo" type="string">
+			<bind-xml name="campo" node="attribute" />
+		</field>	
+		<field name="criterio" type="string">
+			<bind-xml name="criterio" node="attribute"/>
+		</field>
+		<field name="invertido" type="boolean">
+			<bind-xml name="invertido" node="attribute" />
+		</field>
+		<field name="opcional" type="boolean">
+			<bind-xml name="opcional" node="attribute" />
+		</field>
+		<field name="valor" type="string">
+			<bind-xml name="valor" node="element" />
+		</field>
+	</class>
+	<class name="com.mimolibros.wasabi.client.request.ResultadoBusquedaEjemplares">
+		<map-to xml="resultados_busqueda_ejemplares" />
+		<field name="pagina" type="integer">
+			<bind-xml name="pagina" node="attribute" />
+		</field>
+		<field name="numeroResultados" type="integer">
+			<bind-xml name="numero_resultados" node="attribute" />
+		</field>
+		<field name="ejemplares" type="com.mimolibros.wasabi.client.entities.Ejemplar" collection="arraylist" container="false">
+			<bind-xml name="ejemplares" />
+		</field>
+	</class>
+	
+	<!-- Mapeos request & response !-->
+	
+	<class name="com.mimolibros.wasabi.client.request.TestSetupRequest" extends="com.mimolibros.wasabi.client.request.Request">
+		<map-to xml="setup_request" />
+	</class>
+	
+	<class name="com.mimolibros.wasabi.client.request.TestSetupResponse" extends="com.mimolibros.wasabi.client.request.Response">
+		<map-to xml="setup_response" />
+	</class>
+	
+	<class name="com.mimolibros.wasabi.client.request.AltaEjemplarRequest" extends="com.mimolibros.wasabi.client.request.Request">
+		<map-to xml="alta_ejemplar" />
+		
+		<field name="ejemplar" type="com.mimolibros.wasabi.client.entities.Ejemplar">
+			<bind-xml name="ejemplar" node="element" />
+		</field>
+	</class>
+	
+	<class name="com.mimolibros.wasabi.client.request.ModificarEjemplarRequest" extends="com.mimolibros.wasabi.client.request.Request">
+		<map-to xml="modificar_ejemplar" />
+		
+		<field name="ejemplar" type="com.mimolibros.wasabi.client.entities.Ejemplar">
+			<bind-xml name="ejemplar" node="element" />
+		</field>
+	</class>
+		
+	<class name="com.mimolibros.wasabi.client.request.EjemplarResponse" extends="com.mimolibros.wasabi.client.request.Response">
+		<map-to xml="info_ejemplar" />
+		
+		<field name="ejemplar" type="com.mimolibros.wasabi.client.entities.Ejemplar">
+			<bind-xml name="ejemplar" node="element" />
+		</field>
+	</class>
+	
+	<class name="com.mimolibros.wasabi.client.request.BuscarAutoresRequest" extends="com.mimolibros.wasabi.client.request.Request">
+		<map-to xml="buscar_autores_por_nombre" />
+		<field name="nombre" type="string">
+			<bind-xml name="nombre" node="element" />
+		</field>
+		<field name="id" type="integer">
+			<bind-xml name="id" node="attribute" />
+		</field>	
+		<field name="idEjemplar" type="integer">
+			<bind-xml name="id_ejemplar" node="attribute" />
+		</field>			
+	</class>
+	
+	<class name="com.mimolibros.wasabi.client.request.BuscarAutoresResponse" extends="com.mimolibros.wasabi.client.request.Response">
+		<map-to xml="buscar_autores_response" />
+		<field name="lista" type="com.mimolibros.wasabi.client.entities.Autor" collection="arraylist" container="false">
+			<bind-xml name="lista" />
+		</field>
+	</class>
+	
+	<class name="com.mimolibros.wasabi.client.request.BuscarMateriasRequest" extends="com.mimolibros.wasabi.client.request.Request">
+		<map-to xml="buscar_materias" />
+		<field name="nombre" type="string">
+			<bind-xml name="nombre" node="element" />
+		</field>		
+		<field name="id" type="integer">
+			<bind-xml name="id" node="element" />
+		</field>	
+		<field name="idEjemplar" type="integer">
+			<bind-xml name="id_ejemplar" node="element" />
+		</field>	
+	</class>
+	
+	<class name="com.mimolibros.wasabi.client.request.BuscarMateriasResponse" extends="com.mimolibros.wasabi.client.request.Response">
+		<map-to xml="buscar_materias_response" />
+		<field name="lista" type="com.mimolibros.wasabi.client.entities.Materia" collection="arraylist" container="false">
+			<bind-xml name="lista" />
+		</field>
+	</class>
+	
+	<class name="com.mimolibros.wasabi.client.request.NuevaMateriaRequest" extends="com.mimolibros.wasabi.client.request.Request">
+		<map-to xml="nueva_materia" />
+		<field name="materia" type="com.mimolibros.wasabi.client.entities.Materia">
+			<bind-xml name="materia" node="element"/>
+		</field>
+	</class>
+	
+	<class name="com.mimolibros.wasabi.client.request.ModificarMateriaRequest" extends="com.mimolibros.wasabi.client.request.Request">
+		<map-to xml="modificar_materia" />
+		<field name="materia" type="com.mimolibros.wasabi.client.entities.Materia">
+			<bind-xml name="materia" node="element"/>
+		</field>
+	</class>
+	
+	<class name="com.mimolibros.wasabi.client.request.MateriaResponse" extends="com.mimolibros.wasabi.client.request.Response">
+		<map-to xml="info_materia" />
+		<field name="materia" type="com.mimolibros.wasabi.client.entities.Materia">
+			<bind-xml name="materia" node="element" />
+		</field>
+	</class>
+	
+	<class name="com.mimolibros.wasabi.client.request.NuevoAutorRequest" extends="com.mimolibros.wasabi.client.request.Request">
+		<map-to xml="nuevo_autor" />
+		<field name="autor" type="com.mimolibros.wasabi.client.entities.Autor">
+			<bind-xml name="autor" node="element"/>
+		</field>
+	</class>
+	
+	<class name="com.mimolibros.wasabi.client.request.ModificarAutorRequest" extends="com.mimolibros.wasabi.client.request.Request">
+		<map-to xml="modificar_autor" />
+		<field name="autor" type="com.mimolibros.wasabi.client.entities.Autor">
+			<bind-xml name="autor" node="element"/>
+		</field>
+	</class>
+	<class name="com.mimolibros.wasabi.client.request.AutorResponse" extends="com.mimolibros.wasabi.client.request.Response">
+		<map-to xml="info_autor" />
+		<field name="autor" type="com.mimolibros.wasabi.client.entities.Autor">
+			<bind-xml name="autor" node="element" />
+		</field>
+	</class>
+	
+	<class name="com.mimolibros.wasabi.client.request.BuscarEjemplaresRequest" extends="com.mimolibros.wasabi.client.request.Request">
+		<map-to xml="buscar_ejemplares" />
+		<field name="parametros" type="com.mimolibros.wasabi.client.entities.ParametrosBusquedaEjemplar">
+			<bind-xml name="parametros" node="element"/>
+		</field>
+	</class>
+	
+	<class name="com.mimolibros.wasabi.client.request.BuscarEjemplaresResponse" extends="com.mimolibros.wasabi.client.request.Response">
+		<map-to xml="buscar_ejemplares_response" />
+		<field name="resultado" type="com.mimolibros.wasabi.client.request.ResultadoBusquedaEjemplares">
+			<bind-xml name="resultado_busqueda" node="element"/>
+		</field>
+	</class>
+	
+</mapping>
